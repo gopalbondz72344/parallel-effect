@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel effect</title>
+    <link rel="stylesheet" href="parallelEffect.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">parallel Effect</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Info</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Knight</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+        <br>
+    </section>
+    
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect is Awesome</h2>
+        <p>
+            Parallax scrolling is a popular web technique used widely in product presentation websites, but its effect on user experience is unknown. Parallax scrolling allows the object displayed in the foreground to move faster than the object displayed in the background, so as to create a 3D effect. Dimensionality and scrolling (modality interactivity) are two major characteristics of this technique. A 2 (dimension) × 2 (modality interactivity) between-subjects (N = 295) online experiment revealed that parallax scrolling influences user engagement through two routes: the cue route (perceived coolness, perceived vividness) and the action route (natural mapping, perceived ease of use). User engagement is in turn associated with positive attitudes and behavioral intentions toward the website and the product. The theoretical contribution of the study is it examined interface feature of parallax scrolling on both user perceptions and user actions using the theory of interactive media effects (TIME). The practical contribution of the study is it provides a roadmap to web developers to emphasize affective factors (i.e., vividness, coolness) rather than cognitive factors (i.e., natural mapping, perceived usefulness) when it comes to improving the user experience of the product presentation websites.
+            Parallax scrolling is a visual effect where the background of a web page appears to stay still while the foreground shifts vertically or horizontally. Parallax scrolling is used to add visual interest to a website and engage users as they scroll through a web page.
+            If you want to add a parallax scrolling effect to your website, you should consider the following tips.
+            <ul>
+                <li><strong>Use it selectively.</strong><br> Parallax.scrolling is much more powerful when you use it on one particular element as opposed to all pages and all the time. Use it in headers and titles, or maybe on your home page only. You want parallax scrolling to strengthen your website’s design, not distract users.</li>
+                <li><strong>Image compression is key.</strong><br>Parallax scrolling uses a variety of media files and CSS shapes to create a sense of depth. You don’t want to compromise your web performance and user experience with large image files that load too slowly.</li>
+                <li><strong>Play with color.</strong><br> Parallax scrolling isn’t just about the images in the foreground and background, but about color, too. You might use more desaturated tones in the background and more lively colors in the foreground to create an even greater sense of depth.</li>
+            </ul>
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.05 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+
+    </script>
+</body>
+</html>
